@@ -1,0 +1,282 @@
+.game--container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 0;
+}
+
+.game {
+    position: relative;
+    width: 35vw;
+    height: 25vw;
+    margin: 5vw 5vw 0 5vw;
+}
+
+.folder, .folder--label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35vw;
+    height: 25vw;
+}
+
+.folder {
+    z-index: 1;
+}
+
+.folder--label {
+    z-index: 0;
+}
+
+.folder--foreground,
+.folder--background,
+.folder--background--shadow,
+.batlogo {
+    width: 35vw;
+}
+
+.folder--foreground,
+.folder--background,
+.folder--background--shadow,
+.folder--ear,
+.folder--ear--shadow,
+.batlogo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.folder--foreground {
+    height: 21vw;
+    border-radius: 2vw;
+    background-color: rgb(70, 70, 70);
+    z-index: 5;
+    filter: drop-shadow(0 -0.4vw 0.25vw rgba(0,0,0,0.5));
+}
+
+.folder--background {
+    height: 23.5vw;
+    border-radius: 2vw;
+    background-color: rgb(90, 90, 90);
+    z-index: 3;
+    filter: drop-shadow(0.25vw 0.25vw 0.25vw rgba(0,0,0,0.5));
+}
+
+.folder--background--shadow {
+    height: 23.8vw;
+    border-radius: 2vw;
+    background-color: rgb(110, 110, 110);
+    z-index: 2;
+}
+
+.folder--ear {
+    width: 12vw;
+    height: 24.5vw;
+    border-radius: 1vw 1vw 2vw 2vw;
+    background-color: rgb(90, 90, 90);
+    z-index: 3;
+}
+
+.folder--ear--shadow {
+    width: 12vw;
+    height: 24.8vw;
+    border-radius: 1vw 1vw 2vw 2vw;
+    background-color: rgb(110, 110, 110);
+    z-index: 2;
+}
+
+.folder--paper {
+    width: 30vw;
+    height: 23.1vw;
+    background-color: #ffebcd;
+    border: 0.01vw solid #c2b39d;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    transition: 0.5s ease-in-out;
+    font-family: 'Special Elite', cursive;
+}
+
+.folder--paper h1 {
+    font-size: 1.3vw;
+    padding: 0.5vw 0.5vw 1vw 0.5vw;
+}
+
+.folder--paper p {
+    font-size: 1vw;
+    padding-left: 0.5vw;
+}
+
+.folder:hover .folder--paper {
+    transform: translate(-50%, -5.5vw);
+    transition: 0.5s ease-in-out;
+}
+
+.batlogo {
+    height: 20vw;
+    background-image: url('../../../../assets/batlogo.webp');
+    background-repeat: no-repeat;
+    background-size: 65%;
+    background-position: center center;
+    z-index: 6;
+}
+
+.logo1, .logo2, .logo3, .logo4, .logo5, .logo6 {
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    z-index: 0;
+    background-size: cover;
+    transition: 0.5s ease-in-out;
+    filter: drop-shadow(0.25vw 0.25vw 0.25vw rgba(0,0,0,0.5));
+}
+
+.logo1, .logo2, .logo3 {
+    left: -2vw;
+}
+
+.logo4, .logo5, .logo6 {
+    right: -2vw;
+}
+
+.logo1, .logo4 {
+    bottom: 2vw;
+}
+
+.logo2, .logo5 {
+    bottom: 8vw;
+}
+
+.logo3, .logo6 {
+    bottom: 14vw;
+}
+
+.logo1:hover, .logo2:hover, .logo3:hover {
+    transform: translate(-2.7vw);
+    transition: 0.5s ease-in-out;
+}
+
+.logo4:hover, .logo5:hover, .logo6:hover {
+    transform: translate(2.7vw);
+    transition: 0.5s ease-in-out;
+}
+
+@media (orientation: portrait) {
+    .folders {
+        height: 120vw !important;
+    }
+    
+    .game {
+        width: 110vw;
+        height: 90vw;
+        margin-right: 35vw !important;
+    }
+
+    .game:first-of-type {
+        margin-left: 25vw;
+    }
+    
+    .folder, .folder--label {
+        width: 110vw;
+        height: 90vw;
+    }
+
+    .folder--foreground,
+    .folder--background,
+    .folder--background--shadow,
+    .batlogo {
+        width: 120vw;
+    }
+
+    .folder--foreground {
+        height: 70vw;
+        border-radius: 3vw;
+    }
+    
+    .folder--background {
+        height: 77vw;
+        border-radius: 3vw;
+    }
+    
+    .folder--background--shadow {
+        height: 79vw;
+        border-radius: 3vw;
+    }
+    
+    .folder--ear {
+        width: 40vw;
+        height: 82vw;
+        border-radius: 2vw 2vw 3vw 3vw;
+    }
+    
+    .folder--ear--shadow {
+        width: 40vw;
+        height: 84vw;
+        border-radius: 2vw 2vw 3vw 3vw;
+    }
+
+    .batlogo {
+        height: 80vw;
+    }
+
+    .folder--paper {
+        width: 107vw;
+        height: 77vw;
+        margin-left: 5vw;
+    }
+
+    .folder:hover .folder--paper {
+        transform: translate(-50%, -20vw);
+        border: 0.2vw solid #c2b39d;
+    }
+
+    .folder--paper h1 {
+        font-size: 5vw;
+        padding: 2vw;
+    }
+    
+    .folder--paper p {
+        font-size: 4vw;
+        padding-left: 2vw;
+    }
+
+    .logo1, .logo2, .logo3, .logo4, .logo5, .logo6 {
+        width: 18vw;
+        height: 18vw;
+    }
+
+    .logo1, .logo4 {
+        bottom: 5vw;
+    }
+    
+    .logo2, .logo5 {
+        bottom: 25vw;
+    }
+    
+    .logo3, .logo6 {
+        bottom: 45vw;
+    }
+
+    .logo1, .logo2, .logo3 {
+        left: -7vw;
+    }
+    
+    .logo4, .logo5, .logo6 {
+        position: absolute;
+        right: -17vw;
+        z-index: 1000;
+    }
+
+    .logo1:hover, .logo2:hover, .logo3:hover {
+        transform: translate(-11vw);
+    }
+    
+    .logo4:hover, .logo5:hover, .logo6:hover {
+        transform: translate(11vw);
+    }
+}

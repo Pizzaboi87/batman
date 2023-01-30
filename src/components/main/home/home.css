@@ -1,0 +1,38 @@
+.characters {
+    width: 100%;
+    overflow: hidden;
+}
+
+.allies, .enemies {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-around;
+}
+
+.cardtitle {
+    font-family: 'Special Elite', cursive;
+    color: gold;
+    text-shadow: var(--text-shadow-big-black);
+    text-align: center;
+    font-size: 3.5vw;
+    margin: 2vw;
+}
+
+@media (orientation: portrait) {
+    .characters	{
+        padding-top: 5vw;
+    }
+
+    .allies, .enemies {
+        flex-direction:	column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .cardtitle {
+        margin-bottom: 15vw;
+        margin-top: 5vw;
+        font-size: 6vw;
+    }
+}

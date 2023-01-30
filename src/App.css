@@ -1,0 +1,114 @@
+:root {
+    --text-shadow-big-black: 0.15vw 0.15vw 0.1vw #000000;
+    --text-shadow-small-black: 0.05vw 0.05vw 0.1vw #000000;
+    --text-shadow-big-red: 0.15vw 0.15vw 0.1vw #ED1D24;
+    --text-shadow-small-red: 0.05vw 0.05vw 0.1vw #ED1D24;
+    --blue-background: linear-gradient(0deg,#75a9ff,#1b6d96);
+    --box-shadow: 0.5vw 0.5vw 2vw #1b1b1b;
+    --button-inset-normal: inset 0.15vw 0.15vw 0.2vw rgba(255, 255, 255, 0.6), inset -0.15vw -0.15vw 0.2vw rgba(0, 0, 0, 0.6);
+    --button-inset-active: inset 0.5vw 0.5vw 0.5vw -0.3vw rgba(0, 0, 0, 0.7);
+    --box-shadow-right: 0.3vw 0.3vw 0.5vw #00000080;
+    --box-shadow-left: -0.3vw 0.3vw 0.5vw #00000080;
+    --long-gradient-to-bottom: linear-gradient(to bottom, #ffffff, #eeedfe, #dadbfe, #c2cbff, #a6bcff, #8fb1f7, #76a6ee, #599be5, #4690d1, #3684bd, #2779aa, #1b6d96);
+    --long-gradient-to-top: linear-gradient(to top, #ffffff, #eeedfe, #dadbfe, #c2cbff, #a6bcff, #8fb1f7, #76a6ee, #599be5, #4690d1, #3684bd, #2779aa, #1b6d96);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    all: unset;
+    cursor: pointer;
+}
+
+.title {
+    font-family: 'Special Elite', cursive;
+    position: absolute;
+    top: -17vw;
+    left: 20vw;
+    font-size: 4vw;
+    text-shadow: var(--text-shadow-big-red);
+    max-width: 60vw;
+}
+
+.container {
+    min-height: 80vh;
+}
+
+.content {
+    padding: 10vw 1vw 5vw 1vw;
+    overflow: hidden;
+}
+
+.fadeIn {
+    animation: 0.5s fadeIn forwards;
+}
+  
+.fadeOut {
+    animation: 0.5s fadeOut forwards;
+}
+  
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-20px, 0);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+  
+  @keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+    
+    to {
+        transform: translate(-20px, 0);
+        opacity: 0;
+    }
+}
+
+@media (orientation: portrait) {
+    .title {
+        top: -20vw;
+        left: 10vw;
+        font-size: 5vw;
+    }
+
+    .slider {
+        width: 100vw;
+        height: 140vw;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .slider::-webkit-scrollbar {
+        height: 10vw;
+    }
+  
+    .slider::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2vw #1b6d96;
+        border-radius: 1vw;
+    }
+  
+    .slider::-webkit-scrollbar-thumb {
+        background: var(--blue-background);
+        border-radius: 1vw;
+    }
+
+    .posters {
+        justify-content: flex-start;
+        width: 1080%;
+        min-width: 95vw;
+        margin-top: 0;
+        margin-bottom: 2vw;
+    }
+}

@@ -1,0 +1,87 @@
+.error {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.error--title {
+    text-align: center;
+    font-size: 2.5vw;
+    font-family: 'Special Elite', cursive;
+    position: absolute;
+    line-height: 120%;
+    top: -20vw;
+    left: 20vw;
+    color: #f5ecec;
+    text-shadow: var(--text-shadow-big-red)
+}
+
+.error--text {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.8vw;
+    color: #f5ecec;
+    text-shadow: var(--text-shadow-small-red);
+    text-align: center;
+    margin-bottom: 1vw;
+}
+
+.error--image {
+    width: 50%;
+    height: auto;
+}
+
+.error--button {
+    all: unset;
+    cursor: pointer;
+    font-family: 'Special Elite', cursive;
+    font-size: 2vw;
+    background-color: greenyellow;
+    padding: 0.5vw;
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.2vw;
+    text-shadow: var(--text-shadow-small-red);
+    box-shadow: var(--button-inset-normal);
+    transition: 0.3 ease-in-out;
+}
+
+.error--button:active {
+    box-shadow: var(--button-inset-active);
+}
+
+.realError {
+    margin-top: 2vw;
+}
+
+@media (orientation: portrait) {
+    .error--title {
+        font-size: 5vw;
+        top: -22vw;
+        left: 5vw;
+    }
+
+    .error {
+        flex-direction: column-reverse;
+    }
+
+    .error--image {
+        width: 72%;
+    }
+
+    .error--riddle {
+        margin-bottom: 5vw;
+        margin-top: 5vw;
+    }
+
+    .error--text {
+        font-size: 3.8vw;
+        margin-bottom: 2vw;
+    }
+
+    .error--button {
+        font-size: 5vw;
+        padding-top: 1.4vw;
+    }
+}

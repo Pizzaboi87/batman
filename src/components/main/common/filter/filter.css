@@ -1,0 +1,307 @@
+.filter--form {
+    display: flex;
+    flex-direction: column;
+    width: 42vw;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 4vw;
+}
+
+.filter {
+    display: flex;
+    padding-top: 1vw;
+    margin-top: 1vw;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.filter input[type='radio'] {
+    width: 1vw;
+    height: 1vw;
+    margin-right: 1vw;
+    margin-top: 0.5vw;
+}
+
+input[type='radio']:checked:after {
+    width: 1vw;
+    height: 1vw;
+    border-radius: 1vw;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: gold;
+    content: '';
+}
+
+.filter input[type='radio']:checked {
+    filter: drop-shadow(0vw 0vw 0.25vw #ed1d24);
+}
+
+.filter input[type='range'] {
+    width: 100%;
+    appearance: none;
+    height: 0.2vw;
+    border-radius: 1vw;
+    border-style: inset;
+    margin-bottom: 0.7vw;
+}
+
+.filter input[type='range']::-webkit-slider-thumb {
+    appearance: none;
+    width: 1vw;
+    height: 1vw;
+    background: gold;
+    filter: drop-shadow(0vw 0vw 0.25vw #ed1d24);
+    border-radius: 1vw;
+}
+
+.filter fieldset {
+    background: var(--blue-background);
+    text-shadow: var(--text-shadow-small-black);
+    font-family: 'Special Elite', cursive;
+    font-size: 1.1vw;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    color: gold;
+    border: none;
+}
+
+.filter fieldset legend {
+    text-align: center;
+    float: left;
+    color: white;
+    padding-bottom: 1vw;
+}
+
+.filter fieldset:nth-of-type(1) {
+    width: 9vw;
+    padding-left: 1.2vw;
+}
+
+.range {
+    width: 18vw;
+    height: 10vw;
+    padding: 0.5vw 2vw;
+}
+
+.range legend {
+    margin-bottom: 0.5vw;
+}
+
+.dropdown {
+    width: 10vw;
+    height: 10vw;
+    padding-left: 1.2vw;
+    padding-right: 1.2vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown label {
+    margin-top: 0.3vw;
+}
+
+.movie--imdb {
+    width: 19vw;
+}
+
+.filter select {
+    font-size: 1vw;
+}
+
+.devpub select {
+    width: 14vw;
+}
+
+.devpub select:nth-of-type(2) {
+    margin-top: 6.5vw;
+    position: absolute;
+}
+
+.devpub label:nth-of-type(2) {
+    margin-top: 8.1vw;
+    position: absolute;
+}
+
+.devpub, .platform {
+    width: 15vw;
+}
+
+.devpub, .platform, .gameyear {
+    height: 12vw !important;
+}
+
+.gameyear select{
+    width: 6.5vw;
+}
+
+.gameyear select:nth-of-type(2) {
+    margin-top: 0.6vw;
+}
+
+.platform img {
+    width: 4vw;
+    height: 4vw;
+    align-self: center;
+    margin-top: 0.5vw;
+}
+
+@media (orientation: portrait) {
+    .filter--form {
+        width: 100%;
+    }
+
+    .filter {
+        justify-content: center;
+    }
+
+    .filter fieldset {
+        font-size: 4vw;
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
+    }
+
+    .filter input[type='radio'] {
+        width: 3vw;
+        height: 3vw;
+        margin-right: 2vw;
+        margin-top: 2vw;
+        margin-left: 4vw;
+    }
+
+    input[type='radio']:checked:after {
+        width: 3vw;
+        height: 3vw;
+        border-radius: 100%;
+    }
+
+    .filter input[type='radio']:checked {
+        filter: drop-shadow(0vw 0vw 1vw #ed1d24);
+    }
+
+    .filter input[type='range'] {
+        width: 26vw;
+        margin: 2vw 1vw;
+        height: 2vw;
+        border-radius: 2vw;
+        margin-bottom: 2vw;
+    }
+
+    .movie--imdb label {
+        margin-left: 1vw;
+    }
+
+    .filter input[type='range']::-webkit-slider-thumb {
+        width: 3vw;
+        height: 3vw;
+        filter: drop-shadow(0vw 0vw 1vw #ed1d24);
+        border-radius: 100%;
+    }
+
+    .filter fieldset:nth-of-type(1) {
+        width: 30vw;
+    }
+
+    .filter fieldset legend {
+        text-align: center;
+        float: left;
+        margin-left: 2vw;
+        padding-bottom: 3vw;
+        padding-top: 1vw;
+    }
+
+    .range, .movie--imdb {
+        width: 30vw;
+        height: 33vw;
+    }
+
+    .dropdown {
+        width: 30vw;
+        height: 33vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+    
+    .dropdown label {
+        margin-top: 1.5vw;
+        margin-left: 1.5vw;
+    }
+    
+    .filter select {
+        font-size: 4vw;
+        width: 26vw;
+        margin: 0vw 1vw;
+    }
+
+    .filter select:nth-of-type(2) {
+        margin-top: -2vw;
+    }
+
+    .devpub, .gameyear {
+        height: 42vw !important;
+    }
+
+    .gameyear {
+        width: 30vw;
+    }
+
+    .gameyear select{
+        width: 29vw;
+        margin-right: 2vw;
+    }
+
+    .gameyear select:first-of-type {
+        margin-top: 4vw;
+    }
+
+    .gameyear select:nth-of-type(2){
+        margin-top: 0;
+    }
+
+    .platform {
+        width: 96vw;
+        height: 17vw !important;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 2vw;
+    }
+
+    .platform select {
+        width: 35vw;
+        height: 6vw;
+        margin-left: 4vw;
+        margin-right: 4vw;
+    }
+
+    .platform legend {
+        margin-top: 2vw;
+        width: 20vw;
+    }
+
+    .devpub {
+        width: 59vw;
+    }
+
+    .devpub select {
+        width: 56vw;
+    }
+
+    .platform img {
+        display: none;
+    }
+
+    .devpub select:nth-of-type(2) {
+        margin-top: 25vw;
+        position: absolute;
+    }
+    
+    .devpub label:nth-of-type(2) {
+        margin-top: 31vw;
+        position: absolute;
+    }
+
+    .gamefilter {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,19 @@
+.volume--box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    padding-block: 5vw;
+}
+
+.cover--table {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 1vw;
+    padding-bottom: 3vw;
+}

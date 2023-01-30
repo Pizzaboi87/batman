@@ -1,0 +1,145 @@
+.book--box {
+    perspective: 100vw;
+    margin: 2vw;
+}
+  
+.book--book {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    transform-style: preserve-3d;
+    transform: rotate3d(0, 1, 0, 0);
+    transition: all 300ms;
+    box-shadow: var(--box-shadow-right);
+    border: 0.1vw solid #efce01;
+}
+
+.main--box, .main--book {
+    height: 20vw;
+    width: 13vw;
+}
+
+.notMain--box, .notMain--book {
+    height: 35vw;
+    width: 25vw;
+}
+  
+.book--book:hover {
+    transform: rotate3d(0, 1, 0, 40deg);
+}
+  
+.book--side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #1b1b1b;
+    transform-style: preserve-3d;
+    transform-origin: 0% 50%;
+    transform: rotate3d(0, 1, 0, -86deg) translate3d(-100%, 0, 0);
+    border: 0.1vw solid #efce01;
+}
+
+.main--side {
+    height: 20vw;
+    width: 3vw;
+}
+  
+.notMain--side {
+    height: 35vw;
+    width: 4vw;
+}
+
+.book--side > p {
+    position: absolute;
+    rotate: 90deg;
+    color: #efce01;
+    font-family: 'Special Elite', cursive;
+    font-size: 1.2vw;
+}
+
+.main--side > p {
+    width: 15vw;
+    left: -6.25vw;
+    top: 10vw;
+}
+
+.notMain--side > p {
+    width: 33vw;
+    top: 16vw;
+    left: -14.75vw;
+    text-align: center;
+}
+
+.book--cover {
+    background: #1b1b1b;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+  
+.book--cover > p {
+    color: #efce01;
+    font-family: 'Special Elite', cursive;
+    padding: 1vw 0 1vw 1vw;
+    line-height: 150%;
+    font-size: 1.2vw;
+}
+
+@media (orientation: portrait) {
+    .book--box {
+        perspective: 250vw;
+        margin: 4vw;
+    }
+
+    .main--box {
+        margin: 2vw;
+    }
+    
+    .main--box, .main--book {
+        height: 45vw;
+        width: 29vw;
+    }
+
+    .main--side {
+        height: 45vw;
+        width: 6vw;
+    }
+
+    .book--side > p {
+        font-size: 4vw;
+    }
+
+    .main--side > p {
+        width: 29vw;
+        left: -12vw;
+        top: 20vw;
+    }
+
+    .book--cover > p {
+        padding: 1vw 0 2vw 2vw;
+        line-height: 150%;
+        font-size: 3vw;
+    }
+
+    .notMain--box, .notMain--book {
+        height: 120vw;
+        width: 80vw;
+    }
+
+    .notMain--side {
+        height: 120vw;
+        width: 10vw;
+        transform: rotate3d(0, 1, 0, -75deg) translate3d(-100%, 0, 0);
+    }
+
+    .notMain--side > p {
+        width: 110vw;
+        top: 57vw;
+        left: -50.75vw;
+        text-align: center;
+    }
+}
+

@@ -1,0 +1,130 @@
+.description {
+    all: initial;
+    text-align: justify;
+    width: auto;
+    height: 100%;
+    overflow-y: hidden;
+    margin: 2vw;
+    display: block;
+}
+
+.description > h2, .description > h3, .description > h4 {
+    font-family: 'Special Elite', cursive;
+}
+
+.description > h2 {
+    text-shadow: var(--text-shadow-big-red);
+    font-size: 3.5vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+    clear: left;
+}
+
+.description > h3 {
+    font-size: 2.5vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.description > h4 {
+    font-size: 2vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.description > p, ul, blockquote {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5vw;
+    display: inline;
+}
+
+figure {
+    width: 25vw;
+    height: auto;
+    margin: 4vw 2vw;
+    display: inline;
+    pointer-events: none;
+    border-radius: 1vw 1vw 0 0;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 1vw 1vw 0 0;
+}
+
+figure:nth-of-type(even) {
+    float: right;
+    clear: right;
+    margin-right: 0.2vw;
+    box-shadow: var(--box-shadow-left);
+}
+
+figure:nth-of-type(odd) {
+    float: left;
+    clear: left;
+    margin-left: 0.2vw;
+    box-shadow: var(--box-shadow-right);
+}
+
+/* Broken image-links or poor quality from the API*/
+figure[data-width='0'],
+figure[data-ref-id='1300-1585204'],
+figure[data-ref-id='1300-4019948'],
+figure[data-ref-id='1300-4018996'],
+figure[data-ref-id='1300-4019003'],
+figure[data-ref-id='1300-1255271'],
+figure[data-ref-id='1300-2586008'],
+figure[data-ref-id='1300-5899625'],
+figure[data-ref-id='1300-5951419'],
+figure[data-ref-id='1300-4115918'],
+figure[data-ref-id='1300-1642295'],
+figure[data-ref-id='1300-1421534'],
+figure[data-ref-id='1300-2444937'],
+figure[data-ref-id='1300-8662240'],
+figure[data-ref-id='1300-7080209'],
+figure[data-ref-id='1300-3789685']
+{
+    display: none;
+}
+
+figcaption {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vw;
+    text-align: start;
+    padding-left: 0.5vw;
+}
+
+@media (orientation: portrait) {
+    .description > h2 {
+        font-size: 7vw;
+        margin-top: 7vw;
+    }
+
+    .description > h3 {
+        font-size: 6vw;
+        margin-top: 6vw;
+    }
+
+    .description > h4 {
+        font-size: 5vw;
+        margin-top: 5vw;
+    }
+
+    .description > p, ul, blockquote {
+        font-size: 4vw;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    figure {
+        width: 95vw;
+    }
+
+    figcaption {
+        font-size: 3vw;
+    }
+}

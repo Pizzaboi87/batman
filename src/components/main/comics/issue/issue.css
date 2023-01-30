@@ -1,0 +1,130 @@
+.issue {
+	height: 35vw;
+    width: 25vw;
+	margin: 2vw;
+    cursor: pointer;
+}
+
+.front, .back {
+	position: absolute;
+	height: 35vw;
+    width: 25vw;
+	border: 0.4vw solid #fff;
+	border-radius: 0.1vw;
+	box-shadow: var(--box-shadow-right);
+	transition: all 1.5s ease;
+    backface-visibility: hidden;
+}
+
+.front {
+	background-size: cover;
+    transform: perspective(100vw) rotateY(0deg);
+}
+
+.back {
+    transform: perspective(100vw) rotateY(-179.9deg);
+    overflow-y: scroll;
+    padding: 1vw;
+    background-image: url('../../../../assets/book_background.webp');
+    background-repeat: repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    background-color: gold;
+    background-blend-mode:hue;
+}
+
+.issue--info {
+    margin-bottom: 5vw;
+    text-align: justify;
+}
+
+.issue--info > h1 {
+    text-align: center;
+    margin-bottom: 2vw;
+}
+
+.back > ul, .back > *, .issue--info * {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.4vw;
+    list-style-type: none;
+}
+
+.back li {
+    margin-top: 1vw;
+}
+
+.issue--info table, 
+.issue--info h2, 
+.issue--info h4, 
+.issue--info img, 
+.issue--info figure {
+    display: none;
+}
+
+.frontTurn {
+	transform: perspective(100vw) rotateY(179.9deg);
+}
+
+.backTurn {
+	transform: perspective(100vw) rotateY(0deg);
+}
+
+.issue--link {
+    background: var(--blue-background);
+    color: gold;
+    font-family: 'Special Elite', cursive;
+    margin-block: 1vw;
+    font-size: 2vw;
+    padding: 1vw;
+    border-radius: 1vw;
+    cursor: pointer;
+    border: none;
+    text-shadow: var(--text-shadow-small-black);
+    box-shadow: var(--button-inset-normal);
+}
+
+.issue--link:active {
+    box-shadow: var(--button-inset-active);
+}
+
+@media (orientation: portrait) {
+    .issue {
+        height: 120vw;
+        width: 80vw;
+        margin: 2vw;
+    }
+
+    .front, .back {
+        height: 120vw;
+        width: 80vw;
+        position: relative;
+    }
+
+    .front {
+        transform: perspective(1000vw) translateY(0) rotateY(0deg);
+    }
+    
+    .back {
+        transform: perspective(1000vw) translateY(-120vw) rotateY(-179.9deg);
+        padding: 3vw;
+    }
+
+    .frontTurn {
+        transform: perspective(1000vw) translateY(0) rotateY(179.9deg);
+    }
+    
+    .backTurn {
+        transform: perspective(1000vw) translateY(-120vw) rotateY(0deg);
+    }
+
+    .back > ul, .back > *, .issue--info * {
+        font-size: 4vw;
+    }
+
+    .issue--link {
+        margin-block: 2vw;
+        font-size: 6vw;
+        padding: 3vw;
+        border-radius: 2vw;
+    }
+}

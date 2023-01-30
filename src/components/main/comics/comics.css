@@ -1,0 +1,119 @@
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.options img {
+    width: 30vw;
+    filter:grayscale(100%);
+    cursor: pointer;
+}    
+
+.left:hover img, .right:hover img {
+    filter:grayscale(0%);
+}
+
+.left, .right {
+    position: relative;
+}
+
+.left .choose, .right .choose {
+    position: absolute;
+    visibility: hidden;
+}
+
+.left:hover .choose, .right:hover .choose {
+    visibility: visible;
+}
+
+.left .bubble {
+    width: 25vw;
+    top: -6vw;
+    left: 18vw;
+    z-index: 1;
+}
+
+.left .text {
+    font-size: 2vw;
+    width: 20vw;
+    top: -1.5vw;
+    left: 21vw;
+    z-index: 2;
+}
+
+.right .bubble {
+    width: 25vw;
+    top: -6vw;
+    left: -10vw;
+    z-index: 1;
+}
+
+.right .text {
+    font-size: 2.2vw;
+    width: 20vw;
+    top: 0vw;
+    left: -8vw;
+    z-index: 2;
+}
+
+.choose {
+    font-family: 'Special Elite', cursive;
+    font-size: 3vw;
+    text-align: center;
+}
+
+.main {
+    text-shadow: var(--text-shadow-big-red);
+    padding-block: 3vw;
+}
+
+@media (orientation: portrait) {
+    .choose {
+        font-size: 6vw;
+    }
+    
+    .main {
+        padding-block: 6vw;
+    }
+    
+    .options {
+        flex-direction: column;
+    }
+
+    .options img {
+        width: 75vw;
+        filter:grayscale(0%);
+    }
+
+    .left .choose, .right .choose {
+        visibility: visible;
+    }
+
+    .left .bubble {
+        width: 45vw;
+        top: 4vw;
+        left: 42vw;
+    }
+
+    .left .text {
+        font-size: 4.5vw;
+        width: 35vw;
+        top: 10vw;
+        left: 48vw;
+        z-index: 2;
+    }
+
+    .right .bubble {
+        width: 50vw;
+        top: 11vw;
+        left: -8vw;
+    }
+
+    .right .text {
+        font-size: 4.5vw;
+        width: 30vw;
+        top: 22vw;
+        left: 1vw;
+    }
+}

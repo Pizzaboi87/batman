@@ -1,0 +1,25 @@
+.noMatch {
+    font-family: 'Special Elite', cursive;
+    font-size: 2vw;
+    text-shadow: var(--text-shadow-big-red);
+    text-align: center;
+    padding-top: 2vw; 
+}
+
+.onlyError {
+    padding-top: 10vw;
+}
+
+@media (orientation: portrait) {
+    .noMatch {
+        font-size: 6vw;
+        display: block;
+        margin: 0 auto;
+        padding-top: 5vw;
+        align-self: flex-start;
+    }
+
+    .onlyError {
+        padding-top: 20vh;
+    }
+}

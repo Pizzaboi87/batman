@@ -1,0 +1,179 @@
+.card, .batmancard {
+    position: relative;
+    height: 25vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(45deg, #483d8b, #1b6d96, #75a9ff);
+    transition: 0.5s ease-in-out;
+    box-shadow: var(--box-shadow-right);
+}
+
+.card {
+    width: 30vw;
+    margin-bottom: 4vw;
+}
+
+.batmancard {
+    width: 40vw;
+    margin: 5vw auto 5vw auto;
+}
+
+.card > img, .batmancard > img {
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 22vw;
+    transition: 0.5s;
+    z-index: 1;
+    filter: drop-shadow(0.25vw 0vw 0.5vw black);
+}
+
+.card > img {
+    left: 15vw;
+}
+
+.batmancard > img {
+    left: 22vw;
+}
+
+.card:hover > img {
+    left: 24.5vw;
+    height: 28vw;
+}
+
+.batmancard:hover > img {
+    left: 40vw;
+    height: 30vw;
+}
+
+.cardtext {
+    position: relative;
+    padding: 1vw;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+    left: 10vw;
+}
+
+.card > .cardtext {
+    width: 16vw;
+}
+
+.batmancard > .cardtext {
+    width: 23vw;
+}
+
+.card:hover > .cardtext, .batmancard:hover > .cardtext {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.cardtext > h2 {
+    font-family: 'Special Elite', cursive;
+    color: gold;
+    text-transform: uppercase;
+    font-size: 2vw;
+    line-height: 2vw;
+    text-shadow: var(--text-shadow-small-black);
+}
+
+.cardtext > p {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 0.95vw;
+}
+
+.cardbutton {
+    font-size: 1vw;
+    position: relative;
+    color: #111111;
+    background-color: gold; 
+    display: inline-block;
+    padding: 0.5vw 1vw;
+    margin-top: 0.7vw;
+    text-decoration: none;
+    border: none;
+    font-family: 'Special Elite', cursive;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--button-inset-normal);
+    transition: 0.3s ease-in-out;
+}
+
+.cardbutton:active {
+    box-shadow: var(--button-inset-active);
+}
+
+@media (orientation: portrait) {
+    .card {
+        width: 98vw;
+        height: 45vw;
+        margin-bottom: 10vw;
+    }
+
+    .card:hover {
+        height: 70vw;
+    }
+
+    .batmancard {
+        margin-top: 25vw;
+        width: 98vw;
+        height: 45vw;
+    }
+
+    .batmancard:hover {
+        height: 90vw;
+        margin-top: 10vw;
+    }
+
+    .card > img {
+        left: 50vw;
+        height: 60vw;
+    }
+
+    .batmancard > img {
+        left: 50vw;
+        height: 70vw;
+    }
+
+    .card:hover > img {
+        left: 80vw;
+        height: 80vw;
+    }
+
+    .card[id='4005-9052']:hover > img,
+    .card[id='4005-3718']:hover > img,
+    .card[id='4005-1698']:hover > img {
+        left: 73vw;
+        height: 80vw;
+    }
+
+    .batmancard:hover > img {
+        left: 106vw;
+        height: 95vw;
+    }
+
+    .card > .cardtext, .batmancard > .cardtext {
+        padding: 2vw;
+        width: 55vw;
+    }
+
+    .cardtext > p {
+        font-size: 3vw;
+    }
+
+    .cardtext > h2 {
+        font-size: 6vw;
+        line-height: 6vw;
+    }
+
+    .cardbutton {
+        margin-top: 1vw;
+        font-size: 5vw;
+        padding: 1vw 1vw 0.5vw 1vw;
+        line-height: 120%;
+    }
+    
+}
