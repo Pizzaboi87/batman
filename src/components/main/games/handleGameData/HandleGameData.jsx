@@ -184,16 +184,16 @@ const HandleGameData = ({ gameData }) => {
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
             />
-            <div className={window.innerHeight > window.innerWidth ? 'slider folders' : 'game--container'}>
-                <div className='posters' style={window.innerHeight > window.innerWidth ? {width: `${mobileWidth}vw`} : null}>
-                    { inputError
-                        ? <ErrorMessage errorType='inputError' />
-                        : filteredGames.length == 0
-                        ? <ErrorMessage errorType='noMatch' />
-                        : games
-                    }
+            { inputError
+                ? <ErrorMessage errorType='inputError' />
+                : filteredGames.length == 0
+                ? <ErrorMessage errorType='noMatch' />
+                : <div className={window.innerHeight > window.innerWidth ? 'slider folders' : 'game--container'}>
+                    <div className='posters' style={window.innerHeight > window.innerWidth ? {width: `${mobileWidth}vw`} : null}>
+                        {games}
+                    </div>
                 </div>
-            </div>
+            }
         </>
     )
 }

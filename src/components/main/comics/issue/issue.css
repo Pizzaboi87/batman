@@ -30,7 +30,7 @@
     background-position: 50% 0;
     background-size: cover;
     background-color: gold;
-    background-blend-mode:hue;
+    background-blend-mode: saturation;
 }
 
 .issue--info {

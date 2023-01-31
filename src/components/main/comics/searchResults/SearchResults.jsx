@@ -35,14 +35,14 @@ const SearchResults = ({ data, route }) => {
                     clear={clear}
                 /> 
             </form>
-            <div className='covers'>
-                { inputError
-                    ? <ErrorMessage errorType='inputError' />
-                    : result.length == 0 
-                    ? <ErrorMessage errorType='noMatch' />
-                    : <CreateCovers data={result} route={route} isVolumeCover={false} />
-                }
-            </div>
+            { inputError
+                ? <ErrorMessage errorType='inputError' />
+                : result.length == 0 
+                ? <ErrorMessage errorType='noMatch' />
+                : <div className='covers'>
+                    <CreateCovers data={result} route={route} isVolumeCover={false} />
+                </div>
+            }
         </>
     )
 }

@@ -154,17 +154,17 @@ const Posters = ({ data }) => {
                     postPerPage={postPerPage}
                     setCurrentPage={setCurrentPage}
                     currentPage={currentPage}
-                />
-            <div className='slider'>
-                <div className='posters' style={window.innerHeight > window.innerWidth ? {width: `${mobileWidth}%`} : null}>
-                    { inputError
-                        ? <ErrorMessage errorType='inputError' />
-                        : filteredMovies.length == 0
-                        ? <ErrorMessage errorType='noMatch' />
-                        : posters
-                    }
+            />
+            { inputError
+                ? <ErrorMessage errorType='inputError' />
+                : filteredMovies.length == 0
+                ? <ErrorMessage errorType='noMatch' />
+                : <div className='slider'>
+                    <div className='posters' style={window.innerHeight > window.innerWidth ? {width: `${mobileWidth}%`} : null}>
+                        {posters}
+                    </div>
                 </div>
-            </div>
+            }
         </>  
     )
 }
