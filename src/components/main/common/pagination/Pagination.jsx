@@ -1,100 +1,61 @@
-import { useEffect, useState } from 'react'
-import { useRef } from 'react'
-import './pagination.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './pagination.css';
 
-const Pagination = ({totalPosts, postPerPage, setCurrentPage, currentPage}) => {
+const Pagination = ({ currentPage, totalPages, basePath }) => {
+    const getPageNumbers = () => {
+        const pageNumbers = [];
+        const maxPagesToShow = 5;
+        let startPage, endPage;
 
-    const goButton = useRef(null)
-    const [pageExist, setPageExist] = useState(true)
-    const [whichPage, setWhichPage] = useState(1)
-
-    useEffect(() => {
-        setCurrentPage(1)
-    }, [totalPosts])
-
-    const maxPages = Math.ceil(totalPosts/postPerPage)
-    let pages = []
-    for (let i = 1; i <= maxPages; i++) {
-        pages.push(i)
-    }
-
-    const buttons = pages.map((page, index) => {
-        return (
-            <button 
-                key={index} 
-                onClick={() => choosePage(page)}
-                className={page == currentPage ? 'comicButton button--active' : 'comicButton button--normal'}
-                
-            >
-                {page}
-            </button>
-        )
-    })
-
-    const [breathForFetch, setBreathForFetch] = useState(false)
-    const pageButtons = document.getElementsByTagName('button')
-    for (const button of pageButtons) {
-        button.disabled = breathForFetch
-        button.style.cursor = breathForFetch ? 'wait' : 'pointer'
-    }
-
-    const choosePage = (which) => {
-        setBreathForFetch(true)
-        setCurrentPage(which)
-        setTimeout(() => {
-            setBreathForFetch(false)
-        }, 2000)
-    }
-
-    const first = buttons.filter(button => button.key == 0 && button.key != (maxPages - 1))
-    const actual = buttons.find(button => button.key > currentPage - 2 && button.key != 0 && button.key != (maxPages - 1))
-    const last = buttons.filter(button => button.key == (maxPages - 1))
-    const beforeLast = buttons.filter(button => button.key == (maxPages - 2) && currentPage == maxPages && button.key != 0)
-
-    const pageUp = () => {
-        if(currentPage < maxPages) {
-            choosePage(prevPage => prevPage + 1)
-        }
-    }
-
-    const pageDown = () => {
-        if(currentPage > 1) {
-            choosePage(prevPage => prevPage - 1)
-        }
-    }
-
-    const handleChange = (event) => setWhichPage(event.target.value)
-
-    const goToPage = (event) => {
-        event.preventDefault()
-        if(whichPage <= maxPages && whichPage >= 1) {
-            setPageExist(true)
-            choosePage(whichPage)
+        if (totalPages <= maxPagesToShow) {
+            startPage = 1;
+            endPage = totalPages;
         } else {
-            goButton.current.style.cursor = 'not-allowed'
-            setPageExist(false)
+            if (currentPage <= Math.ceil(maxPagesToShow / 2)) {
+                startPage = 1;
+                endPage = maxPagesToShow;
+            } else if (currentPage + Math.floor(maxPagesToShow / 2) >= totalPages) {
+                startPage = totalPages - maxPagesToShow + 1;
+                endPage = totalPages;
+            } else {
+                startPage = currentPage - Math.floor(maxPagesToShow / 2);
+                endPage = currentPage + Math.floor(maxPagesToShow / 2);
+            }
         }
-    }
+
+        for (let i = startPage; i <= endPage; i++) {
+            pageNumbers.push(i);
+        }
+
+        return pageNumbers;
+    };
+
+    const pageNumbers = getPageNumbers();
 
     return (
-        <div className='pagination'>
-            <fieldset className='selectPage'>
-                <legend>Select Page</legend>
-                <button className='comicButton button--arrow' onClick={pageDown}>&#x3C;</button>
-                {first}
-                {actual}
-                {beforeLast}
-                {last}
-                <button className='comicButton button--arrow' onClick={pageUp}>&#x3E;</button>
-                {!pageExist && <h3 className='notExist'>The selected page not exist!</h3>}
-            </fieldset>
-            <fieldset className='goToPage'>
-                <legend>Go to Page</legend>
-                <input type='number' className='pageInput' onChange={handleChange} />
-                <button className='comicButton button--arrow' ref={goButton} onClick={goToPage}>GO</button>
-            </fieldset>
+        <div className="pagination">
+            {currentPage > 1 && (
+                <Link to={`${basePath}${currentPage - 1}`} className="page-link">
+                    Previous
+                </Link>
+            )}
+            {pageNumbers.map((page) => (
+                <Link
+                    key={page}
+                    to={`${basePath}${page}`}
+                    className={`page-link ${currentPage === page ? 'active' : ''}`}
+                >
+                    {page}
+                </Link>
+            ))}
+            {currentPage < totalPages && (
+                <Link to={`${basePath}${currentPage + 1}`} className="page-link">
+                    Next
+                </Link>
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default Pagination;

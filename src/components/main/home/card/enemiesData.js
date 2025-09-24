@@ -52,6 +52,24 @@ const enemiesData = [
         name: `Two-Face`,
         image: `./assets/cards/enemy_two_face.webp`,
         desc: `Formerly the D.A. of Gotham City, Harvey Dent was an ally of Batman and James Gordon until he had acid thrown onto the left side of his face by a mob boss. The incident drove Harvey insane and he became Two-Face, obsessed with chance and always carrying a double-headed coin, which he flips to determine his every decision.`
+    },
+    {
+        id: `4005-4916`,
+        name: `Scarecrow`,
+        image: `./assets/cards/enemy_scarecrow.webp`,
+        desc: `Jonathan Crane is a brilliant psychologist who turns to crime and becomes the Scarecrow. He uses a special fear-inducing gas to terrorize his victims.`
+    },
+    {
+        id: `4005-3714`,
+        name: `Clayface`,
+        image: `./assets/cards/enemy_clayface.webp`,
+        desc: `Basil Karlo is an actor who is driven mad when he learns that a classic horror film in which he starred is being remade. He takes on the persona of the film's villain, Clayface, and embarks on a killing spree.`
+    },
+    {
+        id: `4005-8021`,
+        name: `Mad Hatter`,
+        image: `./assets/cards/enemy_mad_hatter.webp`,
+        desc: `Jervis Tetch is a scientist who is obsessed with the book Alice's Adventures in Wonderland. He uses his mind-control technology to commit crimes and often kidnaps young women who resemble Alice.`
     }
 ]
 

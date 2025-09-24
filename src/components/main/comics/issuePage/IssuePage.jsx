@@ -1,35 +1,38 @@
-import useGetData from "../../common/useGetData/useGetData";
-import CreateCovers from "../createCovers/CreateCovers";
-import Loading from "../../common/loading/Loading";
-import { useParams } from "react-router-dom";
-import NoPage from "../../../nopage/Nopage";
+import React from 'react';
+import useGetData from '../../common/useGetData/useGetData';
+import Loading from '../../common/loading/Loading';
+import NotFound from '../../../NotFound';
+import { useParams } from 'react-router-dom';
+import './issuePage.css';
 
 const IssuePage = () => {
-  const route = useParams();
-  if (!route.issue) route.issue = 1;
-  const volumePage = (route.issue - 1) * 100;
-  const url = `https://batserver.vercel.app/comicvine/issues/1699/filter=volume:${route.volumeID}&field_list=image,name,api_detail_url,description,volume&offset=${volumePage}`;
+    const { volumeID, issue } = useParams();
+    const url = `https://batserver.vercel.app/comicvine/issue/4000-${issue}/field_list=image,name,description,volume`;
 
-  const { data, isLoading, error } = useGetData(url);
-  if (error) return <NoPage error={error} />;
-  if (isLoading) return <Loading img={2} />;
+    const { data, isLoading, error } = useGetData(url);
 
-  return data.results.length == 0 ? (
-    <>
-      <h1 className="title">Empty Volume</h1>
-      <h2 className="noMatch onlyError">
-        The Volume is empty,
-        <br />
-        or the ComicVine API <br />
-        returned with zero result.
-      </h2>
-    </>
-  ) : (
-    <>
-      <h1 className="title">{data.results[0].volume.name}</h1>
-      <CreateCovers data={data.results} isVolumeCover={false} />
-    </>
-  );
+    if (error) return <NotFound />;
+    if (isLoading) return <Loading img={2} />;
+
+    const textWithCorrectLinks = data.results.description
+        ?.replaceAll(/href="\//gi, 'href="https://comicvine.gamespot.com/')
+        .replaceAll(/href="..\/..\//gi, 'href="https://comicvine.gamespot.com/')
+        .replaceAll(/href/gi, 'target="_blank" href')
+        .replaceAll(/style="width:/gi, '')
+        .replaceAll('data-src', 'src');
+
+    return (
+        <div className="content">
+            <h1 className="title">{data.results.volume.name} #{issue}</h1>
+            <div className="issue-details">
+                <img src={data.results.image.original_url} alt={data.results.name} />
+                <div
+                    className="issue-description"
+                    dangerouslySetInnerHTML={{ __html: textWithCorrectLinks }}
+                ></div>
+            </div>
+        </div>
+    );
 };
 
 export default IssuePage;

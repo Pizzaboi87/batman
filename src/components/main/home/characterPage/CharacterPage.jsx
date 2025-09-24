@@ -1,7 +1,7 @@
 import useGetData from "../../common/useGetData/useGetData";
 import Loading from "../../common/loading/Loading";
 import { useParams } from "react-router-dom";
-import NoPage from "../../../nopage/Nopage";
+import NotFound from "../../../NotFound";
 import "./characterPage.css";
 
 const CharacterPage = () => {
@@ -9,7 +9,7 @@ const CharacterPage = () => {
   const url = `https://batserver.vercel.app/comicvine/character/${characterID.id}/field_list=description,name`;
 
   const { data, isLoading, error } = useGetData(url);
-  if (error) return <NoPage error={error} />;
+  if (error) return <NotFound />;
   if (isLoading) return <Loading img={1} />;
 
   const textWithCorrectLinks = data.results.description
@@ -20,13 +20,13 @@ const CharacterPage = () => {
     .replaceAll("data-src", "src");
 
   return (
-    <>
+    <div className="content">
       <h1 className="title">{data.results.name}</h1>
       <div
         className="description"
         dangerouslySetInnerHTML={{ __html: textWithCorrectLinks }}
       ></div>
-    </>
+    </div>
   );
 };
 

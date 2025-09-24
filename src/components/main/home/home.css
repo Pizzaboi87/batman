@@ -1,38 +1,19 @@
 .characters {
-    width: 100%;
-    overflow: hidden;
+    display: grid;
+    grid-gap: 20px;
 }
 
-.allies, .enemies {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: space-around;
+.character-list h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
 }
 
-.cardtitle {
-    font-family: 'Special Elite', cursive;
-    color: gold;
-    text-shadow: var(--text-shadow-big-black);
-    text-align: center;
-    font-size: 3.5vw;
-    margin: 2vw;
-}
-
-@media (orientation: portrait) {
-    .characters	{
-        padding-top: 5vw;
-    }
-
-    .allies, .enemies {
-        flex-direction:	column;
-        justify-content: center;
-        align-content: center;
-    }
-
-    .cardtitle {
-        margin-bottom: 15vw;
-        margin-top: 5vw;
-        font-size: 6vw;
-    }
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
 }

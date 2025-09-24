@@ -1,0 +1,37 @@
+.issue-details {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.issue-details img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.issue-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.issue-description a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.issue-description a:hover {
+    color: #d9534f;
+}
+
+.issue-description img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+    .issue-details {
+        grid-template-columns: 1fr;
+    }
+}

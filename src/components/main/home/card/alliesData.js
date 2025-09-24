@@ -52,6 +52,24 @@ const alliesData = [
         name: `Damian Wayne`,
         image: `./assets/cards/ally_robin.webp`,
         desc: `Damian Wayne is the son of Bruce Wayne and Talia al Ghul. Trained by the League of Assassins all his life, Damian joined his father’s side in the war against crime by becoming the fifth Robin.`
+    },
+    {
+        id: `4005-79173`,
+        name: `Batwing`,
+        image: `./assets/cards/ally_batwing.webp`,
+        desc: `Luke Fox is the son of Lucius Fox, the President and CEO of Wayne Enterprises. A soldier and a skilled MMA fighter, Luke was supposed to be the next man to bear the Batwing mantle.`
+    },
+    {
+        id: `4005-4923`,
+        name: `Spoiler`,
+        image: `./assets/cards/ally_spoiler.webp`,
+        desc: `Stephanie Brown is the daughter of the criminal Cluemaster. She becomes the Spoiler to "spoil" her father's criminal plots, and eventually becomes a member of the Bat-Family.`
+    },
+    {
+        id: `4005-7179`,
+        name: `Orphan`,
+        image: `./assets/cards/ally_orphan.webp`,
+        desc: `Cassandra Cain is the daughter of assassins David Cain and Lady Shiva. Trained from birth to be the ultimate martial artist, she becomes a hero and a member of the Bat-Family.`
     }
 ]
 

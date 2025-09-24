@@ -1,29 +1,34 @@
-import useGetData from "../../common/useGetData/useGetData";
-import CreateParts from "../createParts/CreateParts";
-import Loading from "../../common/loading/Loading";
-import IssuePage from "../issuePage/IssuePage";
-import { useParams } from "react-router-dom";
-import NoPage from "../../../nopage/Nopage";
+import React from 'react';
+import useGetData from '../../common/useGetData/useGetData';
+import Loading from '../../common/loading/Loading';
+import NotFound from '../../../NotFound';
+import { useParams, Link } from 'react-router-dom';
+import './issueListPage.css';
 
 const IssueListPage = () => {
-  const route = useParams();
-  const url = `https://batserver.vercel.app/comicvine/volume/4050-${route.volumeID}/field_list=count_of_issues,name`;
-  const address = ``;
+    const { volumeID } = useParams();
+    const url = `https://batserver.vercel.app/comicvine/volume/4050-${volumeID}/field_list=issues,name`;
 
-  const { data, isLoading, error } = useGetData(url);
-  if (error) return <NoPage error={error} />;
-  if (isLoading) return <Loading img={2} />;
+    const { data, isLoading, error } = useGetData(url);
 
-  if (data.results.count_of_issues > 100) {
+    if (error) return <NotFound />;
+    if (isLoading) return <Loading img={2} />;
+
     return (
-      <CreateParts
-        address={address}
-        total={data.results.count_of_issues}
-        order={"Issues:"}
-        title={data.results.name}
-      />
+        <div className="content">
+            <h1 className="title">{data.results.name}</h1>
+            <div className="issue-grid">
+                {data.results.issues.map((issue) => (
+                    <Link to={`/comics/vol_${volumeID}/${issue.issue_number}`} key={issue.id} className="issue-card">
+                        <div className="issue-info">
+                            <h3>#{issue.issue_number}</h3>
+                            <p>{issue.name}</p>
+                        </div>
+                    </Link>
+                ))}
+            </div>
+        </div>
     );
-  } else return <IssuePage title={data.results.name} />;
 };
 
 export default IssueListPage;

@@ -1,15 +1,13 @@
-import load_1 from '../../../../assets/loading_1.gif'
-import load_2 from '../../../../assets/loading_2.gif'
+import React from 'react';
+import './loading.css';
 
-import './loading.css'
-
-const Loading = ({ img }) => {
+const Loading = () => {
     return (
-        <div className='loading'>
-            <img src={img === 1 ? `${load_1}` : `${load_2}`} alt='loading' />
-            <h2>Loading...</h2>
+        <div className="loading-container">
+            <div className="loading-spinner"></div>
+            <p>Loading...</p>
         </div>
-    )
-}
+    );
+};
 
 export default Loading;

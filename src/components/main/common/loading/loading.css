@@ -1,44 +1,32 @@
-.loading, .loading--issues {
+.loading-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 40px;
 }
 
-.loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: var(--accent-color);
+    animation: spin 1s ease-in-out infinite;
 }
 
-.loading > img, .loading--issues > img {
-    height: auto;
-    width: 20vw;
-}
-
-.loading > h2, .loading--issues > h2 {
-    font-family: 'Special Elite', cursive;
-    font-size: 2.5vw;
-    text-shadow: var(--text-shadow-big-red);
-    margin-top: 0.66vw;
-}
-
-@media (orientation: portrait) {
-    .loading {
-        width: 100%;
-        height: 125vw;
-        top: 0;
-        transform: translate(-50%, 0);
-        padding-top: 25vw;
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
-    
-    .loading > img, .loading--issues > img {
-        width: 60vw;
+    100% {
+        transform: rotate(360deg);
     }
+}
 
-    .loading > h2, .loading--issues > h2 {
-        font-size: 8vw;
-        margin-top: 1vw;
-    }
+.loading-container p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--text-color);
 }
